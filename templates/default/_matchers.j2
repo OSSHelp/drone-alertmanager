@@ -1,0 +1,37 @@
+"matchers": [
+  {
+    "isRegex": true,
+    "name": "job",
+    "value": "{{ PLUGIN_JOB | escape_for_json | mandatory }}"
+  }{% if PLUGIN_ENV is defined %},
+  {
+    "isRegex": true,
+    "name": "env",
+    "value": "{{ PLUGIN_ENV | escape_for_json }}"
+  }{% endif %}{% if PLUGIN_INSTANCE is defined %},
+  {
+    "isRegex": true,
+    "name": "instance",
+    "value": "{{ PLUGIN_INSTANCE | escape_for_json }}"
+  }{% endif %}{% if PLUGIN_ALERTNAME is defined %},
+  {
+    "isRegex": true,
+    "name": "alertname",
+    "value": "{{ PLUGIN_ALERTNAME | escape_for_json }}"
+  }{% endif %}{% if PLUGIN_GROUP is defined %},
+  {
+    "isRegex": true,
+    "name": "group",
+    "value": "{{ PLUGIN_GROUP | escape_for_json }}"
+  }{% endif %}{% if PLUGIN_SEVERITY is defined %},
+  {
+    "isRegex": true,
+    "name": "severity",
+    "value": "{{ PLUGIN_SEVERITY | escape_for_json }}"
+  }{% endif %}{% if PLUGIN_SOURCE is defined %},
+  {
+    "isRegex": true,
+    "name": "source",
+    "value": "{{ PLUGIN_SOURCE | escape_for_json }}"
+  }{% endif %}
+]
